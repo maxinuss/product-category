@@ -1,5 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { ProductService } from "./product.service";
+import { ValidationPipe } from "../../common/validation.pipe";
+import { ProductDto } from "./product.dto";
 
 @Controller('product')
 export class ProductController {
@@ -10,5 +12,25 @@ export class ProductController {
   @Get('/')
   list() {
     return this.productService.findAll();
+  }
+
+  @Post('/')
+  async create(@Body(new ValidationPipe()) body: ProductDto) {
+    return this.productService.create(body);
+  }
+
+  @Patch('/:id')
+  async update(@Param('id') id: string, @Body(new ValidationPipe()) body: ProductDto) {
+    return this.productService.update(id, body);
+  }
+
+  @Get('/:id')
+  async getOne(@Param('id') id: string) {
+    return this.productService.findOne(id);
+  }
+
+  @Delete('/:id')
+  async delete(@Param('id') id: string) {
+    return this.productService.delete(id);
   }
 }

@@ -10,7 +10,7 @@ export class Product {
   name: string;
 
   @Prop()
-  images: string;
+  images: string[];
 
   @Prop()
   description: string
