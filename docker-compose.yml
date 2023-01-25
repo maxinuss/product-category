@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  node-pc:
+    build: ./docker/node
+    command: bash -c "npm i && npm run start:dev"
+    container_name: node-pc-container
+    volumes:
+      - .:/www
+    ports:
+      - "3902:3000"
+    networks:
+      - product-category-ms-network
+
+  mongo-pc:
+    image: mongo:latest
+    container_name: mongo-pc-container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: product_category
+    ports:
+      - "29017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - product-category-ms-network
+
+volumes:
+  mongodb_data_container:
+  node_modules:
+  data:
+    driver: "local"
+networks:
+  product-category-ms-network:
+    name: product-category-ms-network
+    driver: bridge
