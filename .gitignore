@@ -39,3 +39,5 @@ lerna-debug.log*
 /test/coverage
 /test/e2e/coverage
 /test/unit/coverage
+
+.serverless
