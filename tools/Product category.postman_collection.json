@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "a2b97332-29d5-4ece-a042-98b803c1243d",
+		"name": "Product category",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4537006"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "List categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3902/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"House\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your house\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3902/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"House\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your house\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3902/category/63d17670a3f171f57a3defc4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"category",
+								"63d17670a3f171f57a3defc4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3902/category/63d17670a3f171f57a3defc4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"category",
+								"63d17670a3f171f57a3defc4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3902/category/63d17670a3f171f57a3defc4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"category",
+								"63d17670a3f171f57a3defc4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "List products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3902/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Chair\",\n    \"images\": [\"http://image.com\", \"http://image2.com\"],\n    \"description\": \"Perfect plastic chair\",\n    \"price\": \"20.0\",\n    \"category\": \"63d17c52ace74b95b3cc5d7b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3902/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Chair\",\n    \"images\": [\"http://image.com\", \"http://image2.com\"],\n    \"description\": \"Perfect plastic chair\",\n    \"price\": 20.0,\n    \"category\": \"63d17c52ace74b95b3cc5d7b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3902/product/63d17d40a25ba36684635105",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"product",
+								"63d17d40a25ba36684635105"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3902/product/63d17d40a25ba36684635105",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"product",
+								"63d17d40a25ba36684635105"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3902/product/63d17670a3f171f57a3defc4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"product",
+								"63d17670a3f171f57a3defc4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

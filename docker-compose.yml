@@ -2,8 +2,9 @@ version: '3.7'
 
 services:
   node-pc:
+    tty: true
     build: ./docker/node
-    command: bash -c "npm i && npm run start:dev"
+    command: bash -c "npm i && npm run build && npm run start:dev"
     container_name: node-pc-container
     volumes:
       - .:/www

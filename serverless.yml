@@ -1,0 +1,18 @@
+service: product-category
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    NODE_ENV: ${param:env}
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - httpApi:
+          method: ANY
+          path: /
+      - httpApi:
+          method: ANY
+          path: '/{proxy+}'
