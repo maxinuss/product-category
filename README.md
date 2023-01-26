@@ -24,6 +24,14 @@ requirements:
 9. Backend should be deployed to AWS lambda, details should be part of
 README.md.
 ```
+---
+### Stack
+
+* Docker & Docker-compose
+* NestJs using TS
+* MongoDB
+* Jest for testing
+* Serverless Framework
 
 ### How to run this project
 
@@ -32,7 +40,7 @@ README.md.
 * Copy the .env.example file to .env (Default params will work for local)
 * Run ```make up``` if you use Linux or Mac (if not you can run ``` docker-compose up -d```).
 * Run ```make logs``` (or ```docker-compose logs -f```) to check when startup has finished.
-* Access to the endpoints
+* Access to the endpoints (Postman collection attached)
 
 ### How to deploy
 * Create a free MongoDB Atlas account: https://www.mongodb.com/cloud/atlas
@@ -51,3 +59,20 @@ Collection is exported and can be find in tools folder.
 ### How to run tests
 * Run ```make node``` (or ```docker exec -it node-pc-container bash```).
 * Run ```npm run test```
+
+### Images uploading
+For time reasons is just a link.
+A good implementation would be to create some specific endpoint for upload images and get the link. Then this link can be sent to the Entities creation.
+Both Categories and Products should use the same endpoint.
+
+### What could be improved?
+* Data inputs validation (Just validating types now)
+* Error handling, responses and status
+* Deploy process
+* Unified responses
+* Cache
+* E2E testing
+* Deeper Unit testing and more cases
+* Wrap Queries into repositories and not directly into services.
+* Add linter
+* Add git-hooks to run linter and test before push
